@@ -50,8 +50,8 @@
 			</plugin>
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>jib-build-plan</artifactId>
-				<version>0.4.0</version>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.1.4</version>
 				<configuration>
 					<from>
 						<image>openjdk:17</image>
