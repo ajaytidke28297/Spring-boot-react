@@ -8,7 +8,6 @@ import lombok.*;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class Student {
     private Long id;
     private String name;
