@@ -12,7 +12,7 @@ public class StudentController {
 
     @GetMapping
     public List<Student> getAllStudents() {
-        List<Student> students = List.of(
+        return List.of(
                 new Student(1L,
                         "Ajay",
                         "ajaytidke@gmail.com",
@@ -22,6 +22,5 @@ public class StudentController {
                         "aayansh@gmail.com",
                         Gender.MALE)
         );
-        return students;
     }
 }
