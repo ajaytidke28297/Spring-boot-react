@@ -24,8 +24,12 @@ function StudentDrawerForm({ showDrawer, setShowDrawer, fetchStudents }) {
       fetchStudents();
       onCLose();
     } catch (error) {
-      errorNotification("Failed to add Student ", error);
-      console.log(error);
+      const errObj = error.response.data;
+      errorNotification(
+        "There was an issue",
+        `${errObj.message} [${errObj.status}] ${errObj.error}`,
+        "bottomLeft"
+      );
     } finally {
       setSubmitting(false);
     }
