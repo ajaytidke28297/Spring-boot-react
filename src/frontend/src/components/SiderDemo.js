@@ -67,7 +67,10 @@ class SiderDemo extends React.Component {
                 <Empty />
               )}
               {!this.props.isFetching && this.props.data.length !== 0 && (
-                <TableComp data={this.props.data} />
+                <TableComp
+                  fetchStudents={this.props.fetchStudents}
+                  data={this.props.data}
+                />
               )}
             </div>
           </Content>

@@ -9,7 +9,6 @@ function App() {
 
   const fetchStudents = async () => {
     const data = await getAllStudents();
-    console.log(data.data);
     setStudents(data.data);
     setIsFetching(false);
   };
@@ -18,7 +17,13 @@ function App() {
     fetchStudents();
   }, []);
 
-  return <SiderDemo isFetching={isFetching} data={students} />;
+  return (
+    <SiderDemo
+      isFetching={isFetching}
+      data={students}
+      fetchStudents={fetchStudents}
+    />
+  );
 }
 
 export default App;
