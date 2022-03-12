@@ -8,8 +8,6 @@ import {
   TeamOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Empty } from "antd";
-import Spinner from "./UI/Spinner";
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -62,16 +60,11 @@ class SiderDemo extends React.Component {
               className="site-layout-background"
               style={{ padding: 24, minHeight: 360 }}
             >
-              {this.props.isFetching && <Spinner />}
-              {!this.props.isFetching && this.props.data.length === 0 && (
-                <Empty />
-              )}
-              {!this.props.isFetching && this.props.data.length !== 0 && (
-                <TableComp
-                  fetchStudents={this.props.fetchStudents}
-                  data={this.props.data}
-                />
-              )}
+              <TableComp
+                isFetching={this.props.isFetching}
+                fetchStudents={this.props.fetchStudents}
+                data={this.props.data}
+              />
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
